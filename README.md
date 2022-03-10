@@ -1,1 +1,0 @@
-# CRamirez-tech.github.io

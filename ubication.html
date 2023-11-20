@@ -13,11 +13,28 @@
         } else {
             alert("Sorry, your browser does not support HTML5 geolocation.");
         }
-        setTimeout(30000);
-        console.log("Actualizado");
-        showPosition();
     }
-    showPosition();
+
+    async function miMetodoAsincrono() {
+    // Simula una operación asíncrona, por ejemplo, una solicitud AJAX
+    return new Promise(resolve => {
+            setTimeout(() => {
+                console.log("Método ejecutado de forma asíncrona");
+                showPosition();
+                resolve();
+            }, 3000); // Simula una operación que toma 1 segundo
+        });
+    }
+
+    // Función para llamar a la función asíncrona cada 30 segundos
+    function ejecutarCada30Segundos() {
+        setInterval(async () => {
+            await miMetodoAsincrono();
+        }, 10000); // 30 segundos en milisegundos
+    }
+
+    // Llama a la función para iniciar el intervalo
+    ejecutarCada30Segundos();
 </script>
 </head>
 <body>

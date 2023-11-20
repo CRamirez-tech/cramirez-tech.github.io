@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <title>Get Current Position</title>
 <script>
+    
+    const myInterval = setInterval(showPosition, 10000);
     function showPosition() {
         if(navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
@@ -13,6 +15,9 @@
         } else {
             alert("Sorry, your browser does not support HTML5 geolocation.");
         }
+    }
+    function myStopFunction() {
+      clearInterval(myInterval);
     }
 </script>
 </head>

@@ -13,13 +13,14 @@
         } else {
             alert("Sorry, your browser does not support HTML5 geolocation.");
         }
+        setTimeout(30000);
     }
+    showPosition();
 </script>
 </head>
 <body>
     <div id="result">
         <!--Position information will be inserted here-->
     </div>
-    <button type="button" onclick="showPosition();">Show Position</button>
 </body>
 </html>
